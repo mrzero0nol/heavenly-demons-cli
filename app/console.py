@@ -84,8 +84,10 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def print_ascii_art():
-    art = r"""
- [neon_cyan]
+    # Combined art string to ensure alignment
+
+    # Main Logo
+    logo = r"""
       .                                                      .
         .n                   .                 .                  n.
   .   .dP                  dP                   9b                 9b.    .
@@ -107,13 +109,22 @@ dX.    9Xb      .dXb    __                     __    dXb.     dXP     .Xb
                               X. 9  `   '  P )X
                               `b  `       '  d'
                                `             '
- [/neon_cyan]
-[bold neon_pink]
- _  _                      _        ___
-| || |___ __ ___ _____ _ _| |_  _  |   \ ___ _ __  ___ _ _  ___
-| __ / -_) _` \ V / -_) ' \ | || | | |) / -_) '  \/ _ \ ' \(_-<
-|_||_\___|\__,_|\_/\___|_||_|_|\_, | |___/\___|_|_|_\___/_||_/__/
-                               |__/
-[/bold neon_pink]
-    """
-    console.print(Align.center(art))
+"""
+
+    # "Heavenly Demons" in ANSI Shadow font (Huge)
+    text_art = r"""
+██╗  ██╗███████╗ █████╗ ██╗   ██╗███████╗███╗   ██╗██╗  ██╗   ██╗    ██████╗ ███████╗███╗   ███╗ ██████╗ ███╗   ██╗███████╗
+██║  ██║██╔════╝██╔══██╗██║   ██║██╔════╝████╗  ██║██║  ╚██╗ ██╔╝    ██╔══██╗██╔════╝████╗ ████║██╔═══██╗████╗  ██║██╔════╝
+███████║█████╗  ███████║██║   ██║█████╗  ██╔██╗ ██║██║   ╚████╔╝     ██║  ██║█████╗  ██╔████╔██║██║   ██║██╔██╗ ██║███████╗
+██╔══██║██╔══╝  ██╔══██║╚██╗ ██╔╝██╔══╝  ██║╚██╗██║██║    ╚██╔╝      ██║  ██║██╔══╝  ██║╚██╔╝██║██║   ██║██║╚██╗██║╚════██║
+██║  ██║███████╗██║  ██║ ╚████╔╝ ███████╗██║ ╚████║███████╗██║       ██████╔╝███████╗██║ ╚═╝ ██║╚██████╔╝██║ ╚████║███████║
+╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝       ╚═════╝ ╚══════╝╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+"""
+
+    # We construct a Renderable that centers everything
+
+    combined_text = Text()
+    combined_text.append(logo, style="bold neon_cyan")
+    combined_text.append(text_art, style="bold neon_pink")
+
+    console.print(Align.center(combined_text))
