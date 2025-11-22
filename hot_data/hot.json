@@ -22,5 +22,13 @@
         "variant_name": "Vidio",
         "option_name": "Vidio",
         "order": 1
+    },
+    {
+        "family_name": "conference 10k 15 GB",
+        "family_code": "5dab52d5-6f02-4678-b72f-088396ceb113",
+        "is_enterprise": false,
+        "variant_name": "Vidio",
+        "option_name": "Vidio",
+        "order": 3
     }
 ]
